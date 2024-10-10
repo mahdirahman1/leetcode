@@ -10,9 +10,8 @@ class Solution:
             left = nums[l]
             if left > right_max[r]:
                 l += 1
-            else:
-                res = max(res, r-l)
+
+            res = max(res, r-l)
            
-        
         
         return res
