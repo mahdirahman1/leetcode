@@ -16,11 +16,10 @@ class Solution:
         while True:
             _, li, index = heapq.heappop(minHeap)
             if index + 1 >= len(nums[li]):
-                print(res)
                 return res
 
             heapq.heappush(minHeap, [nums[li][index+1], li, index+1])
-                    
+
             left = minHeap[0][0]
             right = max(right, nums[li][index+1])
     
