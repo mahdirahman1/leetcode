@@ -24,7 +24,6 @@ class Solution:
 
             if max_count + 1 < 0:
                 heapq.heappush(maxHeap, [max_count+1, char])
-        
-        print(res)
+     
 
         return "".join(res)
