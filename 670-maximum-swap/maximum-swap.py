@@ -14,9 +14,8 @@ class Solution:
                 # swap
                 num[i], num[-index] = num[-index], num[i]
                 break
-            else:
+            elif i != -index:
                 # num is same, if index is different put it back in heap
-                if i != -index:
-                    heapq.heappush(maxHeap, (number,index))
+                heapq.heappush(maxHeap, (number,index))
         
         return int("".join([str(n) for n in num]))
