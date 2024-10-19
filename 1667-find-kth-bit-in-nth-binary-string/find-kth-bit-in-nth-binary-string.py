@@ -9,7 +9,8 @@ class Solution:
             next_curr += "0" * (len(curr)-len(right)) 
             next_curr += right
             curr = next_curr
-            
+            if len(curr) >= k:
+                return curr[k-1]
             n -= 1
         
         return curr[k-1]
