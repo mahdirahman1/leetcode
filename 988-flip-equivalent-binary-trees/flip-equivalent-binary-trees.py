@@ -23,8 +23,7 @@ class Solution:
             if node1.val != node2.val:
                 return False
 
-            left = False
-            right = False
+        
 
             # check if children are opposite
             if node1.left and node2.left:
