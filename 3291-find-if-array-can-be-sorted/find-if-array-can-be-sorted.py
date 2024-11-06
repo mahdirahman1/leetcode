@@ -31,8 +31,7 @@ class Solution:
             
 
             if count != prev_bit_set:
-                if num < prev_largest:
-                    return False
+                
                 
                 old_bit_set = prev_bit_set
                 prev_bit_set = count
