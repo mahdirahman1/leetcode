@@ -10,15 +10,12 @@ class Solution:
         if len(str2) > len(str1):
             return False
        
-        s1 = 0
         s2 = 0
-        while s1 < len(str1):
+        for s1 in range(len(str1)):
             if str1[s1] == str2[s2] or (ord(str1[s1]) - ord('a') + 1) % 26 == (ord(str2[s2])-ord('a')) % 26:
                 s2 += 1
 
             if s2 == len(str2):
                 return True
-
-            s1 += 1
 
         return False
