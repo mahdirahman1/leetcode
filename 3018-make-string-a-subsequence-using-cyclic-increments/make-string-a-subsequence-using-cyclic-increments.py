@@ -9,8 +9,7 @@ class Solution:
         """
         if len(str2) > len(str1):
             return False
-        
-        print(ord('a')-ord('a'), (ord('z')-ord('a') + 1) % 26)
+       
         s1 = 0
         s2 = 0
         while s1 < len(str1):
@@ -21,5 +20,5 @@ class Solution:
                 return True
 
             s1 += 1
-            
+
         return False
