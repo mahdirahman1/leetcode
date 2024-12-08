@@ -12,28 +12,27 @@ class Solution:
         do dfs and return lowest node when set is empty (all nodes are under this node)
         """
 
-        nodes = set([node.val for node in nodes])
-        self.ans = None
-        def dfs(node, seen):
-            if node is None:
-                return seen
-            
-            left = dfs(node.left, set())
-            right = dfs(node.right, set())
+        seen = set(nodes)
 
-            all_seen = left.union(right)
-            if node.val in nodes:
-                all_seen.add(node.val)
-            
-            if all_seen == nodes:
-                if self.ans is None:
-                    self.ans = node
-            
-            return all_seen
-                
+        def dfs(root):
+            if root in seen:
+                return root
 
+            if not root:
+                return None
 
-          
+            left = dfs(root.left)
+            right = dfs(root.right)
+
+            if left and right:
+                return root
+            
+            if left and not right:
+                return left
         
-        dfs(root, nodes)
-        return self.ans
+            if right and not left:
+                return right
+            
+            return None
+
+        return dfs(root)
