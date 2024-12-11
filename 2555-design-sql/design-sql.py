@@ -13,7 +13,7 @@ class SQL:
         self.row_count[name] += 1
 
     def deleteRow(self, name: str, rowId: int) -> None:
-        del self.tables[name][rowId]
+        return
 
     def selectCell(self, name: str, rowId: int, columnId: int) -> str:
         return self.tables[name][rowId][columnId-1]
