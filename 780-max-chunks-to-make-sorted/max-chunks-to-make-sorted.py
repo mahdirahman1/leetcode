@@ -15,16 +15,27 @@ class Solution:
         original [4,3,2,1,0]
         s1 and s2 will only match at the end
         """
-        s1 = set()
-        s2 = set()
-        sorted_arr = sorted(arr)
+        # s1 = set()
+        # s2 = set()
+        # sorted_arr = sorted(arr)
+        # res = 0
+        # for i in range(len(arr)):
+        #     s1.add(sorted_arr[i])
+        #     s2.add(arr[i])
+        #     if s1 == s2:
+        #         res += 1
+        #         s1 = set()
+        #         s2 = set()
+        
+        # return res
         res = 0
+
+        curr_max = 0
+
         for i in range(len(arr)):
-            s1.add(sorted_arr[i])
-            s2.add(arr[i])
-            if s1 == s2:
+            curr_max = max(curr_max, arr[i])
+
+            if curr_max == i:
                 res += 1
-                s1 = set()
-                s2 = set()
         
         return res
