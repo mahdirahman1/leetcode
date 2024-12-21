@@ -20,9 +20,6 @@ class Solution:
         self.parts = 0
         def dfs(node, visited):
             visited.add(node)
-            # if this is a leaf node, return its value
-            if not adjList[node]:
-                return values[node]
             
             total = values[node]
             for child in adjList[node]:
