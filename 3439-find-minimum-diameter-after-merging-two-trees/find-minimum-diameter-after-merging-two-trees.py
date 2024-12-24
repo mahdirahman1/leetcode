@@ -47,4 +47,4 @@ class Solution:
         just find the diameter of both trees and ans would be max({d1,d2,(d1+1)/2 +(d2+1)/2+1)} as for minimum diameter you would always merge center point of both trees diameter. and diameter might not even change after merging if other tree is too small
         """
 
-        return max(d1,d2, 1+((d1+1)//2)+(((d2+1)//2)))
+        return max(d1,d2, 1 + ceil(d1/2) + ceil(d2/2))
