@@ -32,7 +32,7 @@ class Solution:
             return descendants
 
         res = dfs(root, p, q)
-        print(res)
+
         if res[-1] == True:
             return res[0]
         
