@@ -1,21 +1,24 @@
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        
-        @cache
-        def dfs(index, sum_):
+        cache = defaultdict(int)
+        def dfs(index, left, cache):
+            if (index, left) in cache:
+                return cache[(index, left)]
+
             if index == len(nums):
-                if sum_ == target:
+                if left == 0:
                     return 1
                 else:
                     return 0
             
             total = 0
             # try - next num
-            total += dfs(index+1, sum_ - nums[index])
-
+            total += dfs(index+1, left - nums[index], cache)
             # try + next num
-            total += dfs(index+1, sum_ + nums[index])
-            
-            return total
+            total += dfs(index+1, left + nums[index], cache)
 
-        return dfs(0, 0)
+            cache[(index, left)] = total
+            
+            return cache[(index, left)]
+
+        return dfs(0, target, cache)
