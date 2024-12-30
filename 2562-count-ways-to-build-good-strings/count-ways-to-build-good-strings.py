@@ -16,9 +16,9 @@ class Solution:
         for i in range(1, len(dp)):
             # for zeros
             if (i-zero) >= 0:
-                dp[i] += dp[i-zero]
+                dp[i] += dp[i-zero] % (10**9+7)
 
             if (i-one) >= 0:
-                dp[i] += dp[i-one]
+                dp[i] += dp[i-one] % (10**9+7)
         
         return sum(dp[low:high+1]) % (10**9+7)
