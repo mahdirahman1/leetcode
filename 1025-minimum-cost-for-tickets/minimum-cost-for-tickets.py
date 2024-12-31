@@ -15,7 +15,7 @@ class Solution:
 
         for i in range(1, len(dp)):
             if i in travel_days:
-                dp[i] = min(dp[i - 1] + costs[0],
+                dp[i] = min(dp[i- 1] + costs[0],
                                dp[max(0, i - 7)] + costs[1],
                                dp[max(0, i - 30)] + costs[2])
             else:
