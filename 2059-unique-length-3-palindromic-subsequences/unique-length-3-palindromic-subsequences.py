@@ -3,7 +3,7 @@ class Solution:
         """
         find first and last index of a char
         go through all chars in map, if it has two indexes (at least two appearances)
-        calculate 3 subsequence palindrome as last_index - first_index - 1
+        calculate 3 subsequence palindrome as set(chars) between first and last index
         """
         index_map = defaultdict(list)
 
